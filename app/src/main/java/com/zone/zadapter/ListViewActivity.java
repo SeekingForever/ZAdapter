@@ -60,7 +60,7 @@ public class ListViewActivity extends Activity implements Handler.Callback {
             }
 
             @Override
-            public int getItemLayoutId(String menuEntity, int position) {
+            public int getItemLayoutId(String data, int position) {
                 return R.layout.item_menu;
             }
 
