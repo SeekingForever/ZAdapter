@@ -17,13 +17,14 @@
             android:onClick="onClick"
             android:text="add " />
 
-        <!--<Button-->
-            <!--android:id="@+id/bt_aniAdd"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_weight="1"-->
-            <!--android:onClick="onClick"-->
-            <!--android:text="add ani" />-->
+        <Button
+            android:id="@+id/bt_aniAdd"
+            android:visibility="gone"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            android:text="add ani" />
 
         <Button
             android:id="@+id/bt_remove"
@@ -32,13 +33,14 @@
             android:layout_weight="1"
             android:onClick="onClick"
             android:text="remove  " />
-        <!--<Button-->
-            <!--android:id="@+id/bt_removeAni"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_weight="1"-->
-            <!--android:onClick="onClick"-->
-            <!--android:text="remove ani" />-->
+        <Button
+            android:id="@+id/bt_removeAni"
+            android:layout_width="0dp"
+            android:visibility="gone"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            android:text="remove ani" />
 
         <Button
             android:id="@+id/bt_clear"
