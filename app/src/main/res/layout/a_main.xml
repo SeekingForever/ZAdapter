@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/bt_ListView"
+        android:onClick="onClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:text="ListView" />
+
+    <Button
+        android:id="@+id/bt_RecyclerView_Linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:layout_gravity="center_vertical"
+        android:text="RecyclerView_Linear" />
+    <Button
+        android:id="@+id/bt_RecyclerView_Grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:layout_gravity="center_vertical"
+        android:text="RecyclerView_Grid" />
+    <Button
+        android:id="@+id/bt_RecyclerView_StaggeredGrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:layout_gravity="center_vertical"
+        android:text="RecyclerView_StaggeredGrid" />
+</LinearLayout>

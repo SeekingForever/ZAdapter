@@ -1,0 +1,16 @@
+ps：
+1. fillData(final Helper<MenuEntity> helper, final MenuEntity item, boolean itemChanged, int layoutId)
+
+2. helper.setOnClickListener  Not repeat   setonclick
+ helper.setOnClickListenerForce  repeat setonclick
+
+3.Because item is a final type control reuse onclick will reuse the final class will not
+ change and helper will not change, but the inside of the data do I always set the good so you use this on the line
+
+4.have header or footer not use animation (method:.ani())
+
+reference：
+https://github.com/JoanZapata/base-adapter-helper
+https://github.com/cundong/HeaderAndFooterRecyclerView
+https://github.com/Frank-Zhu/AndroidRecyclerViewDemo
+https://github.com/Syehunter/RecyclerViewManager
