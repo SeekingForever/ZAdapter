@@ -11,6 +11,21 @@
 ### 未解决的问题
 - [x] recyclerView 如果添加 headView 或者 footerView后 不支持动画操作
 
+# Usage
+
+### Jcenter
+gradle
+
+    compile 'com.zone:zadapter:1.0.0'
+pom.xml
+
+    <dependency>
+     <groupId>com.zone</groupId>
+     <artifactId>zadapter</artifactId>
+     <version>1.0.0</version>
+     <type>pom</type>
+    </dependency>
+    
 # Preview
 ![](./demo/demo.png)
 
