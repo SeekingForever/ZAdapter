@@ -27,7 +27,12 @@ pom.xml
     </dependency>
     
 # Preview
-![](./demo/demo.png)
+###listView
+![](./demo/listview.gif)
+### recyclerView mode: grid
+![](./demo/grid.gif)
+### recyclerView mode: staggeredgrid
+![](./demo/staggeredgrid.gif)
 
 Easy use:
 1.adapter的初始化  listView 用QuickAdapter recyclerView用QuickRcvAdapter
