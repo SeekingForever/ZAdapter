@@ -1,19 +1,16 @@
 # ZAdapter
-A listview and recyclerview can use the universal adapter 
+一个listView 和 recyclerView 都可以使用的万能adapter
 
-#### [中文版文档](./README-cn.md)
-
-### Solved problems 
-- [x] Support adding head and bottom 
-- [x] Support the pull up load with the load on the bottom of the view global switch with custom
-- [x] Support for fast switching listview adapter to recyclerview adapter 
-- [x] Setonitemlongclicklistener setonitemclicklistener support 
-- [x] Reference base-adapter-helper so helper features similar to setonclicklistener only once can be used repeatedly, and the setonclicklistenerforce is forced to repeat the settings 
-- [x] Recyclerview if you do not add headview or footerview can quickly support the animation operation 
-- [x] Itemchanged:position data is changed 
-
-### Unsolved problems 
-- [x] Recyclerview if you add headview or footerview does not support the animation operation
+### 已解决的问题
+- [x] 支持添加头部和底部 
+- [x] 支持上拉记载 与上啦加载底部view的全局切换与自定义
+- [x] 支持快速将listview的适配器切换为recyclerView的适配器
+- [x] setOnItemClickListener setOnItemLongClickListener的支持
+- [x] 参考base-adapter-helper 所以helper功能类似 setOnClickListener 仅设置一次 可以重复使用 ，而setOnClickListenerForce则强制重复设置
+- [x] recyclerView 如果不添加 headView 或者 footerView 可以快速支持动画操作
+- [x] itemChanged:position的数据是否变化
+### 未解决的问题
+- [x] recyclerView 如果添加 headView 或者 footerView后 不支持动画操作
 
 # Usage
 
@@ -31,7 +28,6 @@ pom.xml
     </dependency>
     
 # Preview
-
 ###listView
 ![](./demo/listview.gif)
 ### recyclerView mode: grid
@@ -40,7 +36,7 @@ pom.xml
 ![](./demo/staggeredgrid.gif)
 
 Easy use:
-1.Adapter initialization quickadapter with recyclerview quickrcvadapter with listview
+1.adapter的初始化  listView 用QuickAdapter recyclerView用QuickRcvAdapter
   
      QuickAdapter adapter2 = new QuickAdapter<String>(this, mDatas) {
               @Override
@@ -68,7 +64,7 @@ Easy use:
               }
           };
 
-2.headView footView setOnLoadMoreListener  setOnItemClickListener onItemLongClick's useage
+2.headView footView setOnLoadMoreListener  setOnItemClickListener onItemLongClick的使用
   
                QuickManager.with(muliAdapter, rv)
                 .addHeaderView(LayoutInflater.from(this).inflate(R.layout.header_simple, null))
@@ -122,7 +118,6 @@ Easy use:
  change and helper will not change, but the inside of the data do I always set the good so you use this on the line
 
 3.have header or footer not use animation (method:.ani())
-
 
 # Reference&Thanks：
 https://github.com/JoanZapata/base-adapter-helper
