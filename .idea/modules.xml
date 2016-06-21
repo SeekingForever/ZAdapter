@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/zadapter/ZAdapter.iml" filepath="$PROJECT_DIR$/zadapter/ZAdapter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ZAdapter.iml" filepath="$PROJECT_DIR$/ZAdapter.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zadapter/zadapter.iml" filepath="$PROJECT_DIR$/zadapter/zadapter.iml" />
     </modules>
   </component>
 </project>

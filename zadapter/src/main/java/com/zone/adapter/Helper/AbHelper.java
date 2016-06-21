@@ -19,6 +19,9 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
+
+import com.bumptech.glide.DrawableTypeRequest;
+import com.bumptech.glide.Glide;
 import com.zone.adapter.R;
 import com.zone.adapter.callback.Helper;
 
@@ -157,33 +160,54 @@ public class AbHelper<T> implements Helper<T> {
         return this;
     }
 
-    //todo I'm not used to using gilde with pissco when the time comes
-//    /**
-//     * Will download an image from a URL and put it in an ImageView.<br/>
-//     * It uses Square's Picasso library to download the image asynchronously and put the result into the ImageView.<br/>
-//     * Picasso manages recycling of views in a ListView.<br/>
-//     * If you need more control over the Picasso settings, use {Helper#setImageBuilder}.
-//     * @param viewId   The view id.
-//     * @param imageUrl The image URL.
-//     * @return The Helper for chaining.
-//     */
-//    public Helper setImageUrl(int viewId, String imageUrl) {
-//        ImageView view = retrieveView(viewId);
-//        Picasso.with(context).load(imageUrl).into(view);
-//        return this;
-//    }
-//
-//    /**
-//     * Will download an image from a URL and put it in an ImageView.<br/>
-//     * @param viewId         The view id.
-//     * @param requestBuilder The Picasso request builder. (e.g. Picasso.with(context).load(imageUrl))
-//     * @return The Helper for chaining.
-//     */
-//    public Helper setImageBuilder(int viewId, RequestCreator requestBuilder) {
-//        ImageView view = retrieveView(viewId);
-//        requestBuilder.into(view);
-//        return this;
-//    }
+    /**
+     * Will download an image from a URL and put it in an ImageView.
+     * It uses Square's Picasso library to download the image asynchronously and put the result into the ImageView.
+     * Picasso manages recycling of views in a ListView.
+     * If you need more control over the Picasso settings, use {Helper#setImageBuilder}.
+     * @param viewId   The view id.
+     * @param imageUrl The image URL.
+     * @return The Helper for chaining.
+     */
+    public Helper setImageUrl(int viewId, String imageUrl) {
+        ImageView view = retrieveView(viewId);
+        Glide.with(context).load(imageUrl).into(view);
+        return this;
+    }
+    /**
+     * Will download an image from a URL and put it in an ImageView.
+     * It uses Square's Picasso library to download the image asynchronously and put the result into the ImageView.
+     * Picasso manages recycling of views in a ListView.
+     * If you need more control over the Picasso settings, use {Helper#setImageBuilder}.
+     * @param viewId   The view id.
+     * @param imageUrl The image URL.
+     * @param holderSymbol about glide holderSymbol~
+     * @return The Helper for chaining.
+     */
+    public Helper setImageUrl(int viewId, String imageUrl,HolderSymbol holderSymbol) {
+        if(holderSymbol==null)
+            return  setImageUrl( viewId, imageUrl);
+        ImageView view = retrieveView(viewId);
+        DrawableTypeRequest<String> temp = Glide.with(context).load(imageUrl);
+        switch (holderSymbol.getErrorSelect()){
+            case Draw:
+                temp.error(holderSymbol.getErrorDrawable());
+                break;
+            case Res:
+                temp.error(holderSymbol.getErrorRes());
+                break;
+        }
+        switch (holderSymbol.getPlaceSelect()){
+            case Draw:
+                temp.placeholder(holderSymbol.getPlaceholderDrawable());
+                break;
+            case Res:
+                temp.placeholder(holderSymbol.getPlaceholderRes());
+                break;
+        }
+        temp.into(view);
+        return this;
+    }
 
     /** Add an action to set the image of an image view. Can be called multiple times. */
     public Helper setImageBitmap(int viewId, Bitmap bitmap) {

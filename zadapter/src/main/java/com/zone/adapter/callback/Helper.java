@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.Adapter;
 import android.widget.AdapterView;
 
+import com.zone.adapter.Helper.HolderSymbol;
+
 /**
  * Created by Administrator on 2016/3/26.
  */
@@ -30,7 +32,10 @@ public interface Helper<T> {
     Helper setImageDrawable(int viewId, Drawable drawable);
 
     //todo I'm not used to using gilde with pissco when the time comes
-    // BaseAdapterHelper setImageUrl(int viewId, String imageUrl)
+    Helper setImageUrl(int viewId, String imageUrl);
+
+    Helper setImageUrl(int viewId, String imageUrl,HolderSymbol holderSymbol);
+
     Helper setImageBitmap(int viewId, Bitmap bitmap);
 
     Helper setAlpha(int viewId, float value);
