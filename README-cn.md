@@ -17,16 +17,19 @@
 ### Jcenter
 gradle
 
-    compile 'com.zone:zadapter:1.0.0'
+    compile 'com.zone:zadapter:1.0.1'
 pom.xml
 
     <dependency>
      <groupId>com.zone</groupId>
      <artifactId>zadapter</artifactId>
-     <version>1.0.0</version>
+     <version>1.0.1</version>
      <type>pom</type>
     </dependency>
-    
+
+# new Version Support
+ Glide 3.7~
+
 # Preview
 ###listView
 ![](./demo/listview.gif)

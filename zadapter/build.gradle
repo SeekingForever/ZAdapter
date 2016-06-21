@@ -30,7 +30,7 @@ publish {
     userOrg = 'luhaoaimama1'//bintray.com用户名
     groupId = 'com.zone'//jcenter上的路径
     artifactId = 'zadapter'//项目名称
-    publishVersion = '1.0.0'//版本号
+    publishVersion = '1.0.1'//版本号
     desc = 'zadapter is common adapter about listView and recyclerView ~'//描述，不重要
     website = 'https://github.com/luhaoaimama1'//网站，不重要
 }
