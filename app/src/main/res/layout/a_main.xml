@@ -33,4 +33,41 @@
         android:onClick="onClick"
         android:layout_gravity="center_vertical"
         android:text="RecyclerView_StaggeredGrid" />
+    <Button
+        android:id="@+id/bt_Recycler_Decoration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:layout_gravity="center_vertical"
+        android:text="Recycler_Decoration" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:layout_gravity="center_vertical"
+        android:text="@string/recyclerviewNewFeature"
+        android:textSize="17dp" />
+
+    <Button
+        android:id="@+id/bt_scroller_List"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:layout_gravity="center_vertical"
+        android:text="Scroller nesting ListView" />
+
+    <Button
+        android:id="@+id/bt_scroller_Grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:layout_gravity="center_vertical"
+        android:text="Scroller nesting GridView" />
+    <Button
+        android:id="@+id/bt_scroller_Recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:layout_gravity="center_vertical"
+        android:text="Scroller nesting Recycler" />
 </LinearLayout>

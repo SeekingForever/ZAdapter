@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sl"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:onClick="onClick"
+            android:id="@+id/tv"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:text="Scoller  Header" />
+
+        <com.zone.zadapter.fully.FullyListView
+            android:id="@+id/gridView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+        </com.zone.zadapter.fully.FullyListView>
+
+        <TextView
+            android:onClick="onClick"
+            android:id="@+id/tv1"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:text="Scoller  footer" />
+    </LinearLayout>
+
+</ScrollView>

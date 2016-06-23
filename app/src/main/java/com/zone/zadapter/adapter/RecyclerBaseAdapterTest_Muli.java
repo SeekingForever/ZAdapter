@@ -1,4 +1,4 @@
-package com.zone.zadapter;
+package com.zone.zadapter.adapter;
 
 import android.content.Context;
 import android.view.View;
@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.zone.adapter.QuickRcvAdapter;
 import com.zone.adapter.callback.Helper;
+import com.zone.zadapter.R;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -10,14 +10,13 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.zone.adapter.QuickManager;
 import com.zone.adapter.callback.IAdapter;
 import com.zone.adapter.loadmore.callback.OnLoadMoreListener;
+import com.zone.zadapter.adapter.RecyclerBaseAdapterTest_Muli;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +43,7 @@ public class RecyclerActivity extends Activity implements Handler.Callback, View
         String type = getIntent().getStringExtra("type");
         if ("Linear".equals(type)) {
             rv.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+//            rv.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         }
         if ("Grid".equals(type)) {
             rv.setLayoutManager(new GridLayoutManager(this, 3));

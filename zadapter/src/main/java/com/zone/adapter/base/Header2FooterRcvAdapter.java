@@ -53,18 +53,19 @@ public abstract class Header2FooterRcvAdapter<T> extends  BaseQuickRcvAdapter<T>
         }
 
     }
+    //header or footer so width->MATCH_PARENT height->WRAP_CONTENT
     private View setFullspan(View itemView){
         if(manager!=null&& manager instanceof StaggeredGridLayoutManager){
             StaggeredGridLayoutManager.LayoutParams params = new StaggeredGridLayoutManager.LayoutParams(
                     StaggeredGridLayoutManager.LayoutParams.MATCH_PARENT,
-                    StaggeredGridLayoutManager.LayoutParams.MATCH_PARENT);
+                    StaggeredGridLayoutManager.LayoutParams.WRAP_CONTENT);
             params.setFullSpan(true);
             itemView.setLayoutParams(params);
         }
         if(manager!=null&& manager instanceof LinearLayoutManager){
             ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
-                    ViewGroup.LayoutParams.MATCH_PARENT);
+                    ViewGroup.LayoutParams.WRAP_CONTENT);
             itemView.setLayoutParams(params);
         }
         return itemView;

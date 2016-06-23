@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ZAdapter</string>
+    <string name="recyclerviewNewFeature">if you want nesting  ,It is best not to use reyclerView ,because  Sliding is not smooth~</string>
 </resources>

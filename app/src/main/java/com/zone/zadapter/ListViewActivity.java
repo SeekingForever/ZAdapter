@@ -17,6 +17,7 @@ import com.zone.adapter.QuickManager;
 import com.zone.adapter.callback.Helper;
 import com.zone.adapter.callback.IAdapter;
 import com.zone.adapter.loadmore.callback.OnLoadMoreListener;
+import com.zone.zadapter.uitls.ToastUtils;
 
 public class ListViewActivity extends Activity implements Handler.Callback {
     private ListView listView1;

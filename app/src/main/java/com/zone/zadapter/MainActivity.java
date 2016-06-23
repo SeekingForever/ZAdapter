@@ -30,6 +30,18 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.bt_RecyclerView_StaggeredGrid:
                 startActivity(new Intent(this, RecyclerActivity.class).putExtra("type","StaggeredGrid"));
                 break;
+            case R.id.bt_Recycler_Decoration:
+                startActivity(new Intent(this, DecorationActivity.class));
+                break;
+            case R.id.bt_scroller_List:
+                startActivity(new Intent(this, ScrollerListActivity.class));
+                break;
+            case R.id.bt_scroller_Grid:
+                startActivity(new Intent(this, ScrollerGridActivity.class));
+                break;
+            case R.id.bt_scroller_Recycler:
+                startActivity(new Intent(this, ScrollerRecActivity.class));
+                break;
         }
     }
 }
