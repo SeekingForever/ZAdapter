@@ -17,18 +17,19 @@
 ### Jcenter
 gradle
 
-    compile 'com.zone:zadapter:1.0.1'
+    compile 'com.zone:zadapter:1.0.2'
 pom.xml
 
     <dependency>
      <groupId>com.zone</groupId>
      <artifactId>zadapter</artifactId>
-     <version>1.0.1</version>
+     <version>1.0.2</version>
      <type>pom</type>
     </dependency>
 
 # new Version Support
- Glide 3.7~
+ Glide 3.7~[1.0.1]
+ dependencies'com.android.support:recyclerview-v7:23.2.0' ~[1.0.2]
 
 # Preview
 ###listView
