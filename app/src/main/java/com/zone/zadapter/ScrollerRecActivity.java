@@ -10,7 +10,6 @@ import android.widget.ScrollView;
 
 import com.zone.adapter.QuickRcvAdapter;
 import com.zone.adapter.callback.Helper;
-import com.zone.zadapter.decoration.GridSpaceDectoration;
 import com.zone.zadapter.uitls.Images;
 
 import java.util.Arrays;
