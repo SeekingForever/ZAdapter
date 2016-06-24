@@ -72,8 +72,8 @@ public class DecorationActivity extends Activity {
         ObjectAnimator ani = ObjectAnimator.ofFloat(elevationWrapper, "elevation", clickElevation, clickElevation / 4,clickElevation);
 //        ani.setDuration(600);
 //        ani.start();
-        ObjectAnimator scaleX = ObjectAnimator.ofFloat(card, "scaleX", 1F, 1.2F,1F);
-        ObjectAnimator scaleY = ObjectAnimator.ofFloat(card, "scaleY", 1F, 1.2F,1F);
+        ObjectAnimator scaleX = ObjectAnimator.ofFloat(card, "scaleX", 1F, 0.8F,1F);
+        ObjectAnimator scaleY = ObjectAnimator.ofFloat(card, "scaleY", 1F, 0.8F,1F);
 //        ObjectAnimator aniReverse = ObjectAnimator.ofFloat(elevationWrapper, "elevation",  clickElevation / 4,clickElevation);
 //        aniReverse.setDuration(300);
         AnimatorSet animatorSet = new AnimatorSet();
