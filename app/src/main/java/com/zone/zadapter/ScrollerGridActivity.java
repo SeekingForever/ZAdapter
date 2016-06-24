@@ -39,7 +39,7 @@ public class ScrollerGridActivity extends Activity {
                     @Override
                     public void onClick(View v) {
                         CardView card = helper.getView(R.id.card);
-                        card.setElevation(getContext().getResources().getDimension(R.dimen.clickElevation));
+//                        card.setElevation(getContext().getResources().getDimension(R.dimen.Elevation));
                     }
                 });
             }

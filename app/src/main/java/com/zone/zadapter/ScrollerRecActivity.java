@@ -44,7 +44,7 @@ public class ScrollerRecActivity extends Activity {
                             public void onClick(View v) {
                                 CardView card=helper.getView(R.id.card);
                                 System.out.println("postion:"+helper.getPosition()+"\t  width:"+helper.getView().getMeasuredWidth()+"\t  height:"+helper.getView().getMeasuredHeight());
-                                card.setElevation(getContext().getResources().getDimension(R.dimen.clickElevation));
+//                                card.setElevation(getContext().getResources().getDimension(R.dimen.Elevation));
                             }
                         });
             }
