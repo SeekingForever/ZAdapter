@@ -3,7 +3,7 @@
 
 ### 已解决的问题
 - [x] 支持添加头部和底部 
-- [x] 支持上拉记载 与上啦加载底部view的全局切换与自定义
+- [x] 支持上拉加载 与 上啦加载底部view的全局切换与自定义
 - [x] 支持快速将listview的适配器切换为recyclerView的适配器
 - [x] setOnItemClickListener setOnItemLongClickListener的支持
 - [x] 参考base-adapter-helper 所以helper功能类似 setOnClickListener 仅设置一次 可以重复使用 ，而setOnClickListenerForce则强制重复设置
@@ -17,13 +17,13 @@
 ### Jcenter
 gradle
 
-    compile 'com.zone:zadapter:1.0.2'
+    compile 'com.zone:zadapter:1.0.4'
 pom.xml
 
     <dependency>
      <groupId>com.zone</groupId>
      <artifactId>zadapter</artifactId>
-     <version>1.0.2</version>
+     <version>1.0.4</version>
      <type>pom</type>
     </dependency>
 
@@ -40,7 +40,7 @@ pom.xml
 ![](./demo/staggeredgrid.gif)
 
 Easy use:
-1.adapter的初始化  listView 用QuickAdapter recyclerView用QuickRcvAdapter
+1.adapter的初始化  listView 用QuickAdapter recyclerView用QuickRcvAdapter 仅仅换个名字即可 其他都不用换!
   
      QuickAdapter adapter2 = new QuickAdapter<String>(this, mDatas) {
               @Override
@@ -67,8 +67,9 @@ Easy use:
                   return R.layout.item_menu;
               }
           };
+     list.setAdapter(adapter2);
 
-2.headView footView setOnLoadMoreListener  setOnItemClickListener onItemLongClick的使用
+2.添加headView footView setOnLoadMoreListener  setOnItemClickListener onItemLongClick的使用
   
                QuickManager.with(muliAdapter, rv)
                 .addHeaderView(LayoutInflater.from(this).inflate(R.layout.header_simple, null))
@@ -112,6 +113,12 @@ Easy use:
         muliAdapter.addHeaderView(LayoutInflater.from(this).inflate(R.layout.header_simple, null));
         muliAdapter.addFooterView(LayoutInflater.from(this).inflate(R.layout.footer_simple, null));
 
+3.全局配置
+
+    //全局替换加载更多 view
+    QuickConfig.setLoadMoreView(Class iLoadMoreFrameLayout)
+    //全局替换加载更多的滑动模式
+    QuickConfig.setLoadMoreMode(boolean mSCROLL_STATE_IDLE_ONLOADMORE)
 
 
 #warning：

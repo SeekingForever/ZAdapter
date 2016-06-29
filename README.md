@@ -21,19 +21,20 @@ A listview and recyclerview can use the universal adapter
 ### Jcenter
 gradle
 
-    compile 'com.zone:zadapter:1.0.2'
+    compile 'com.zone:zadapter:1.0.4'
 pom.xml
 
     <dependency>
      <groupId>com.zone</groupId>
      <artifactId>zadapter</artifactId>
-     <version>1.0.2</version>
+     <version>1.0.4</version>
      <type>pom</type>
     </dependency>
 
 # new Version Support
  Glide 3.7~[1.0.1]
  dependencies'com.android.support:recyclerview-v7:23.2.0' ~[1.0.2]
+ add method:getData ~[1.0.3]
 
 # Preview
 
@@ -45,7 +46,7 @@ pom.xml
 ![](./demo/staggeredgrid.gif)
 
 Easy use:
-1.Adapter initialization quickadapter with recyclerview quickrcvadapter with listview
+1.Adapter initialization quickadapter ---listView quickrcvadapter ----recyclerview  only replace this name!
   
      QuickAdapter adapter2 = new QuickAdapter<String>(this, mDatas) {
               @Override
@@ -72,8 +73,9 @@ Easy use:
                   return R.layout.item_menu;
               }
           };
+          list.setAdapter(adapter2);
 
-2.headView footView setOnLoadMoreListener  setOnItemClickListener onItemLongClick's useage
+2.add headView footView setOnLoadMoreListener  setOnItemClickListener onItemLongClick's useage
   
                QuickManager.with(muliAdapter, rv)
                 .addHeaderView(LayoutInflater.from(this).inflate(R.layout.header_simple, null))
@@ -116,7 +118,12 @@ Easy use:
         //this is ok,too;
         muliAdapter.addHeaderView(LayoutInflater.from(this).inflate(R.layout.header_simple, null));
         muliAdapter.addFooterView(LayoutInflater.from(this).inflate(R.layout.footer_simple, null));
+3.Global configuration
 
+    //Global replace loadmore view
+    QuickConfig.setLoadMoreView(Class iLoadMoreFrameLayout)
+    //global replace loadmore of scroll 's Mode
+    QuickConfig.setLoadMoreMode(boolean mSCROLL_STATE_IDLE_ONLOADMORE)
 
 
 #warning：

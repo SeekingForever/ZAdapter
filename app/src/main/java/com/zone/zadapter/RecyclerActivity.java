@@ -31,8 +31,8 @@ public class RecyclerActivity extends Activity implements Handler.Callback, View
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        handler = new Handler(this);
         super.onCreate(savedInstanceState);
+        handler = new Handler(this);
         setContentView(R.layout.a_recycler);
         rv = (RecyclerView) findViewById(R.id.rv);
         for (int i = 'A'; i <= 'z'; i++) {

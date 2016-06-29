@@ -182,6 +182,11 @@ public abstract class BaseQuickAdapter<T>  extends BaseAdapter implements IAdapt
         return context;
     }
 
+    @Override
+    public List<T> getData() {
+        return data;
+    }
+
 
     @Override
     public void addHeaderView(View header) {

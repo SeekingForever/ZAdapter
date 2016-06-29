@@ -18,6 +18,7 @@ import com.zone.zadapter.animal.ElevationWrapper;
 import com.zone.zadapter.decoration.GridSpaceDectoration;
 import com.zone.zadapter.uitls.Images;
 import com.zone.zadapter.uitls.Utils;
+import com.zone.zadapter.uitls.nine.NineHelper;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -40,14 +41,7 @@ public class DecorationActivity extends Activity {
                     List<Boolean>  list=new ArrayList<>(Images.imageThumbUrls.length);
                     @Override
                     public void fillData(final Helper<String> helper, String item, boolean itemChanged, int layoutId) {
-//                        if (list.size()==0) {
-//                            for (String imageThumbUrl : Images.imageThumbUrls)
-//                                list.add(false);
-//                        }
-//                        if (!list.get(helper.getPosition())) {
-//                            list.set(helper.getPosition(),true);
-                            runEnterAnimation(helper.getView(),getContext());
-//                        }
+                        runEnterAnimation(helper.getView(),getContext());
                         helper.setImageUrl(R.id.civ,item);
                         helper.setOnClickListener(R.id.civ, new View.OnClickListener() {
                             @Override
@@ -68,22 +62,11 @@ public class DecorationActivity extends Activity {
     public void runAni(Context context, CardView card){
         float clickElevation =context.getResources().getDimension(R.dimen.Elevation);
         ElevationWrapper elevationWrapper = new ElevationWrapper(card);
-
-        ObjectAnimator ani = ObjectAnimator.ofFloat(elevationWrapper, "elevation", clickElevation, clickElevation / 4,clickElevation);
-//        ani.setDuration(600);
-//        ani.start();
-        ObjectAnimator scaleX = ObjectAnimator.ofFloat(card, "scaleX", 1F, 0.8F,1F);
-        ObjectAnimator scaleY = ObjectAnimator.ofFloat(card, "scaleY", 1F, 0.8F,1F);
-//        ObjectAnimator aniReverse = ObjectAnimator.ofFloat(elevationWrapper, "elevation",  clickElevation / 4,clickElevation);
-//        aniReverse.setDuration(300);
-        AnimatorSet animatorSet = new AnimatorSet();
-        animatorSet.playTogether(
-                ani,
-                scaleX,
-                scaleY
-        );
-        animatorSet.setDuration(600);
-        animatorSet.start();
+        NineHelper.playTogether(
+                NineHelper.ofFloat( "elevation", clickElevation, clickElevation / 4, clickElevation),
+                NineHelper.ofFloat("scaleX", 1F, 0.8F, 1F),
+                NineHelper.ofFloat( "scaleY", 1F, 0.8F, 1F)
+        ).setTarget(elevationWrapper,card).setDuration(600).start();
     }
     private void runEnterAnimation(View view,Context context){
 //        translationX 、translationY:

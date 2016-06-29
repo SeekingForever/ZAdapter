@@ -90,4 +90,5 @@ public interface IAdapter<T> {
     void removeOnLoadMoreListener();
     void onLoadMoreFail();
     Context getContext();
+    List<T> getData();
 }

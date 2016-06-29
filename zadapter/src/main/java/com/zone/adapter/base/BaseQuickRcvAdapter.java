@@ -147,6 +147,11 @@ public abstract class BaseQuickRcvAdapter<T>   extends RecyclerView.Adapter<View
     }
 
     @Override
+    public List<T> getData() {
+        return data;
+    }
+
+    @Override
     public void setOnItemClickListener(IAdapter.OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
     }
