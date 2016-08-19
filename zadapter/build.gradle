@@ -1,5 +1,10 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'//添加
+//apply plugin: 'com.novoda.bintray-release'//添加
+// JitPack Maven
+apply plugin: 'com.github.dcendents.android-maven'
+// Your Group
+group='com.github.luhaoaimama1'
+
 android {
     compileSdkVersion 23
     buildToolsVersion '23.0.3'
@@ -26,15 +31,15 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:23.2.0'
     compile 'com.github.bumptech.glide:glide:3.7.0'
 }
-//添加
-publish {
-    userOrg = 'luhaoaimama1'//bintray.com用户名
-    groupId = 'com.zone'//jcenter上的路径
-    artifactId = 'zadapter'//项目名称
-    publishVersion = '1.0.4'//版本号
-    desc = 'zadapter is common adapter about listView and recyclerView ~'//描述，不重要
-    website = 'https://github.com/luhaoaimama1'//网站，不重要
-}
+////添加
+//publish {
+//    userOrg = 'luhaoaimama1'//bintray.com用户名
+//    groupId = 'com.zone'//jcenter上的路径
+//    artifactId = 'zadapter'//项目名称
+//    publishVersion = '1.0.4'//版本号
+//    desc = 'zadapter is common adapter about listView and recyclerView ~'//描述，不重要
+//    website = 'https://github.com/luhaoaimama1'//网站，不重要
+//}
 
 
 
