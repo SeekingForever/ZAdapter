@@ -18,18 +18,21 @@ A listview and recyclerview can use the universal adapter
 # Usage
 
 
-### Jcenter
-gradle
+### JicPack
+Add it in your root build.gradle at the end of repositories:
 
-    compile 'com.zone:zadapter:1.0.4'
-pom.xml
+	allprojects {
+		repositories {
+			...
+			maven { url "https://jitpack.io" }
+		}
+	}
+Step 2. Add the dependency
 
-    <dependency>
-     <groupId>com.zone</groupId>
-     <artifactId>zadapter</artifactId>
-     <version>1.0.4</version>
-     <type>pom</type>
-    </dependency>
+	dependencies {
+    	       compile 'com.github.luhaoaimama1:ZAdapter:1.0.5'
+    	}
+    
 
 # new Version Support
  Glide 3.7~[1.0.1]
