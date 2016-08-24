@@ -28,11 +28,7 @@ Add it in your root build.gradle at the end of repositories:
 		}
 	}
 Step 2. Add the dependency
-
-	dependencies {
-    	       compile 'com.github.luhaoaimama1:ZAdapter:1.0.5'
-    	}
-    
+> compile 'com.github.luhaoaimama1:ZAdapter:[Latest release](https://github.com/luhaoaimama1/ZAdapter/releases)'
 
 # new Version Support
  Glide 3.7~[1.0.1]

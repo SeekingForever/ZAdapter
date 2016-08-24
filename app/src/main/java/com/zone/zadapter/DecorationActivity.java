@@ -8,21 +8,17 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
-
-import com.nineoldandroids.animation.AnimatorSet;
-import com.nineoldandroids.animation.ObjectAnimator;
-import com.nineoldandroids.animation.ValueAnimator;
 import com.zone.adapter.QuickRcvAdapter;
 import com.zone.adapter.callback.Helper;
 import com.zone.zadapter.animal.ElevationWrapper;
 import com.zone.zadapter.decoration.GridSpaceDectoration;
 import com.zone.zadapter.uitls.Images;
 import com.zone.zadapter.uitls.Utils;
-import com.zone.zadapter.uitls.nine.NineHelper;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import zone.com.zanimate.object.ObjectAnimatorHelper;
 
 /**
  * Created by sxl on 2016/6/23.
@@ -62,11 +58,13 @@ public class DecorationActivity extends Activity {
     public void runAni(Context context, CardView card){
         float clickElevation =context.getResources().getDimension(R.dimen.Elevation);
         ElevationWrapper elevationWrapper = new ElevationWrapper(card);
-        NineHelper.playTogether(
-                NineHelper.ofFloat( "elevation", clickElevation, clickElevation / 4, clickElevation),
-                NineHelper.ofFloat("scaleX", 1F, 0.8F, 1F),
-                NineHelper.ofFloat( "scaleY", 1F, 0.8F, 1F)
+
+        ObjectAnimatorHelper.playTogether(
+                ObjectAnimatorHelper.ofFloat( "elevation", clickElevation, clickElevation / 4, clickElevation),
+                ObjectAnimatorHelper.ofFloat("scaleX", 1F, 0.8F, 1F),
+                ObjectAnimatorHelper.ofFloat( "scaleY", 1F, 0.8F, 1F)
         ).setTarget(elevationWrapper,card).setDuration(600).start();
+
     }
     private void runEnterAnimation(View view,Context context){
 //        translationX 、translationY:

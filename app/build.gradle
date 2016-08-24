@@ -27,5 +27,6 @@ dependencies {
     compile 'com.android.support:design:23.1.1'
     compile 'com.android.support:cardview-v7:23.1.0'
     compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.github.luhaoaimama1:ZAnimate:1.0.0'
 
 }
