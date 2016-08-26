@@ -13,7 +13,7 @@ import java.util.List;
  */
 public abstract class QuickAdapter<T> extends BaseQuickAdapter<T> {
     protected static final String TAG = QuickAdapter.class.getSimpleName();
-//    private int firstLayoutId=-1;
+    private int firstLayoutId=-1;
 
     public QuickAdapter(Context context, List<T> data) {
         super(context, data, 1);
@@ -59,11 +59,11 @@ public abstract class QuickAdapter<T> extends BaseQuickAdapter<T> {
     @Override
     public int getItemViewType(int position) {
         int resultId=getItemLayoutId(data.get(position), position);
-//        if(firstLayoutId==-1)
-//            firstLayoutId=resultId;
-//        else
-//            if(firstLayoutId!=resultId)
-//                throw new IllegalStateException("must be set viewTypeCount");
+        if(firstLayoutId==-1)
+            firstLayoutId=resultId;
+        else
+            if(firstLayoutId!=resultId)
+                throw new IllegalStateException("must be use Method: viewTypeCount");
         return resultId;
     }
 
