@@ -42,6 +42,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.bt_scroller_Recycler:
                 startActivity(new Intent(this, ScrollerRecActivity.class));
                 break;
+            case R.id.bt_ListViewType:
+                startActivity(new Intent(this, MessAcitivity.class));
+                break;
         }
     }
 }

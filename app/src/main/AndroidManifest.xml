@@ -31,6 +31,7 @@
         <activity android:name=".ScrollerGridActivity"></activity>
         <activity android:name=".ScrollerListActivity"></activity>
         <activity android:name=".ScrollerRecActivity"></activity>
+        <activity android:name=".MessAcitivity"></activity>
     </application>
 
 </manifest>
