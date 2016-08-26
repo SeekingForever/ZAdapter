@@ -29,6 +29,7 @@ public abstract class QuickAdapter<T> extends BaseQuickAdapter<T> {
         super(context, data, viewTypeCount);
     }
 
+
     @Override
     public int getCount() {
         return data.size();
@@ -48,7 +49,7 @@ public abstract class QuickAdapter<T> extends BaseQuickAdapter<T> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 //        final BaseAdapterHelper<T> helper =new BaseAdapterHelper(context,convertView,parent, getItemViewType(position), this);
-        BaseAdapterHelper<T> helper = BaseAdapterHelper.get(context, convertView, parent,layoutIDArrays.get(getItemViewType(position)), this);
+        BaseAdapterHelper<T> helper = BaseAdapterHelper.get(context, convertView, parent, layoutIDArrays.get(getItemViewType(position)), this);
         T item = getItem(position);
         boolean itemChanged = (helper.getData() == null || !helper.getData().equals(item));
         //Object position to maintain the accuracy of the data before using
@@ -58,20 +59,23 @@ public abstract class QuickAdapter<T> extends BaseQuickAdapter<T> {
         return helper.getView();
     }
 
-    List<Integer> layoutIDArrays=new ArrayList<>();
+    private List<Integer> layoutIDArrays = new ArrayList<>();
+
     /**
      * @param position
-     * @return
+     * @return 注意:getItemViewType(int) can not return int value larger than getViewTypeCount().
+     * 例如:getViewTypeCount 是7 那么getItemViewType 不能是7是 小于7 既6是可以的;
+     * Otherwise you will get java.lang.ArrayIndexOutOfBoundsException at android.widget.AbsListView$RecycleBin.addScrapView
      */
     @Override
     public int getItemViewType(int position) {
         int resultId = getItemLayoutId(data.get(position), position);
         if (firstLayoutId == -1)
             firstLayoutId = resultId;
-        else if (firstLayoutId != resultId&&viewTypeCount==1)
+        else if (firstLayoutId != resultId && viewTypeCount == 1)
             throw new IllegalStateException("must be use set Params: viewTypeCount use Method:getViewTypeCount or Construtor! ");
 
-        if(layoutIDArrays.size()<viewTypeCount+1&&!layoutIDArrays.contains(resultId))
+        if (layoutIDArrays.size() < viewTypeCount && !layoutIDArrays.contains(resultId))
             layoutIDArrays.add(resultId);
         return layoutIDArrays.indexOf(resultId);
     }
@@ -79,7 +83,6 @@ public abstract class QuickAdapter<T> extends BaseQuickAdapter<T> {
     //the default value is 1
     @Override
     public int getViewTypeCount() {
-        layoutIDArrays.add(-1);//占位置; 这样都从1开始
         return viewTypeCount;
     }
 
