@@ -3,7 +3,7 @@ apply plugin: 'com.android.library'
 // JitPack Maven
 apply plugin: 'com.github.dcendents.android-maven'
 // Your Group
-group='com.github.luhaoaimama1'
+group = 'com.github.luhaoaimama1'
 
 android {
     compileSdkVersion 23
@@ -31,6 +31,42 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:23.2.0'
     compile 'com.github.bumptech.glide:glide:3.7.0'
 }
+
+//---------------jitPack 文档注释 Start------------------------
+// build a jar with source files
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+task javadoc(type: Javadoc) {
+    failOnError false
+    source = android.sourceSets.main.java.sourceFiles
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    classpath += configurations.compile
+}
+
+// build a jar with javadoc
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives sourcesJar
+    archives javadocJar
+}
+
+// uncomment to build a jar file in addition to the default aar file
+//android.libraryVariants.all { variant ->
+//    def name = variant.buildType.name
+//    def task = project.tasks.create "jar${name.capitalize()}", Jar
+//    task.dependsOn variant.javaCompile
+//    task.from variant.javaCompile.destinationDir
+//    artifacts.add('archives', task);
+//}
+//---------------jitPack 文档注释Over------------------------
+
 ////添加
 //publish {
 //    userOrg = 'luhaoaimama1'//bintray.com用户名
@@ -40,8 +76,6 @@ dependencies {
 //    desc = 'zadapter is common adapter about listView and recyclerView ~'//描述，不重要
 //    website = 'https://github.com/luhaoaimama1'//网站，不重要
 //}
-
-
 
 //
 //android.libraryVariants.all { variant ->
