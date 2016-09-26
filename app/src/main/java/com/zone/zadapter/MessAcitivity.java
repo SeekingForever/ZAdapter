@@ -3,6 +3,7 @@ package com.zone.zadapter;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -53,12 +54,15 @@ public class MessAcitivity extends AppCompatActivity {
                 return R.layout.item_right;
             }
 
-            @Override
-            public int getViewTypeCount() {
-                return 2;
-            }
+//            @Override
+//            public int getViewTypeCount() {
+//                return 2;
+//            }
 
         });
+        adapter.relatedList(rv);
+        adapter.addHeaderView(LayoutInflater.from(this).inflate(R.layout.header_simple, null));
+        adapter.addFooterView(LayoutInflater.from(this).inflate(R.layout.header_simple, null));
     }
 
     public void setListener() {

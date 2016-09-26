@@ -17,6 +17,7 @@ import com.zone.adapter.QuickManager;
 import com.zone.adapter.callback.Helper;
 import com.zone.adapter.callback.IAdapter;
 import com.zone.adapter.loadmore.callback.OnLoadMoreListener;
+import com.zone.zadapter.uitls.EmptyViewUtils;
 import com.zone.zadapter.uitls.ToastUtils;
 
 public class ListViewActivity extends Activity implements Handler.Callback {
@@ -39,6 +40,7 @@ public class ListViewActivity extends Activity implements Handler.Callback {
             mDatas.add("" + (char) i);
         }
         final int[] colorArry = {Color.WHITE, Color.GREEN, Color.YELLOW, Color.CYAN};
+//        mDatas=new ArrayList<String>() ;
         adapter2 = new QuickAdapter<String>(this, mDatas) {
             @Override
             public void fillData(final Helper<String> helper, final String item, boolean itemChanged, int layoutId) {
@@ -66,6 +68,9 @@ public class ListViewActivity extends Activity implements Handler.Callback {
             }
 
         };
+
+        EmptyViewUtils.setEmptyView(this,listView1);
+
         QuickManager.with(adapter2, listView1)
                 .addHeaderView(LayoutInflater.from(this).inflate(R.layout.header_simple, null))
                 .addHeaderView(LayoutInflater.from(this).inflate(R.layout.header_simple, null))

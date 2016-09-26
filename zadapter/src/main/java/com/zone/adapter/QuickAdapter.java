@@ -25,6 +25,12 @@ public abstract class QuickAdapter<T> extends BaseQuickAdapter<T> {
         super(context, data, 1);
     }
 
+    /**
+     *
+     * @param context
+     * @param data
+     * @param viewTypeCount   not Override method:getViewTypeCount();
+     */
     public QuickAdapter(Context context, List<T> data, int viewTypeCount) {
         super(context, data, viewTypeCount);
     }
