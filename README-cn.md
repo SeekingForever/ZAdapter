@@ -69,6 +69,13 @@ Easy use:
      list.setAdapter(adapter2);
 
 2.添加headView footView setOnLoadMoreListener  setOnItemClickListener onItemLongClick的使用
+
+```
+        muliAdapter.addHeaderView(LayoutInflater.from(this).inflate(R.layout.header_simple, null));
+        muliAdapter.addFooterView(LayoutInflater.from(this).inflate(R.layout.footer_simple, null));
+```
+
+这样也好使。下面那个主要帮你把顺序写好了~
   
                QuickManager.with(muliAdapter, rv)
                 .addHeaderView(LayoutInflater.from(this).inflate(R.layout.header_simple, null))
@@ -108,9 +115,6 @@ Easy use:
                 return true;
             }
         }).perform();
-        //this is ok,too;
-        muliAdapter.addHeaderView(LayoutInflater.from(this).inflate(R.layout.header_simple, null));
-        muliAdapter.addFooterView(LayoutInflater.from(this).inflate(R.layout.footer_simple, null));
 
 3.全局配置
 

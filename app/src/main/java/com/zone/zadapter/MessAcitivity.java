@@ -54,10 +54,6 @@ public class MessAcitivity extends AppCompatActivity {
                 return R.layout.item_right;
             }
 
-//            @Override
-//            public int getViewTypeCount() {
-//                return 2;
-//            }
 
         });
         adapter.relatedList(rv);

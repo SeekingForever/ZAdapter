@@ -1,7 +1,9 @@
-package com.zone.adapter;
+package com.zone.adapter.utils;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+
+import com.zone.adapter.QuickRcvAdapter;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -75,6 +75,12 @@ Easy use:
           list.setAdapter(adapter2);
 
 2.add headView footView setOnLoadMoreListener  setOnItemClickListener onItemLongClick's useage
+```
+        muliAdapter.addHeaderView(LayoutInflater.from(this).inflate(R.layout.header_simple, null));
+        muliAdapter.addFooterView(LayoutInflater.from(this).inflate(R.layout.footer_simple, null));
+```
+
+this is ok,too; Below the main help you write the order ~
   
                QuickManager.with(muliAdapter, rv)
                 .addHeaderView(LayoutInflater.from(this).inflate(R.layout.header_simple, null))
@@ -114,9 +120,6 @@ Easy use:
                 return true;
             }
         }).perform();
-        //this is ok,too;
-        muliAdapter.addHeaderView(LayoutInflater.from(this).inflate(R.layout.header_simple, null));
-        muliAdapter.addFooterView(LayoutInflater.from(this).inflate(R.layout.footer_simple, null));
 3.Global configuration
 
     //Global replace loadmore view
