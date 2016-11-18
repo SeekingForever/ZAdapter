@@ -132,10 +132,7 @@ this is ok,too; Below the main help you write the order ~
 1.helper.setOnClickListener：  Not repeat   setonclick
   helper.setOnClickListenerForce：  repeat setonclick
 
-2.Because item is a final type control reuse onclick will reuse the final class will not
- change and helper will not change, but the inside of the data do I always set the good so you use this on the line
-
-3.have header or footer not use animation (method:.ani())
+2.have header or footer not use animation 
 
 
 # Reference&Thanks：

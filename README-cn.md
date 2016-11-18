@@ -125,13 +125,10 @@ Easy use:
 
 
 #warning：
-1.helper.setOnClickListener：  Not repeat   setonclick
-  helper.setOnClickListenerForce：  repeat setonclick
+1.helper.setOnClickListener： 不重复设置  setonclick
+  helper.setOnClickListenerForce：  重复设置 setonclick
 
-2.Because item is a final type control reuse onclick will reuse the final class will not
- change and helper will not change, but the inside of the data do I always set the good so you use this on the line
-
-3.have header or footer not use animation (method:.ani())
+2.有header,和footer的时候不要使用动画 因为可能会崩溃暂时未解决~
 
 # Reference&Thanks：
 https://github.com/JoanZapata/base-adapter-helper
