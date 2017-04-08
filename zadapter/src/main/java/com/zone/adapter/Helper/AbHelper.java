@@ -620,8 +620,9 @@ public class AbHelper<T> implements Helper<T> {
     private Map<String,Object> oMap;
 
     @Override
-    public void setExtraObject(Object o) {
+    public Helper setExtraObject(Object o) {
         this.o=o;
+        return this;
     }
 
     @Override
@@ -630,10 +631,11 @@ public class AbHelper<T> implements Helper<T> {
     }
 
     @Override
-    public void putExtraObject(String key, Object o) {
+    public Helper putExtraObject(String key, Object o) {
         if(oMap==null)
             oMap=new HashMap<>();
         oMap.put(key,o);
+        return this;
     }
 
     @Override

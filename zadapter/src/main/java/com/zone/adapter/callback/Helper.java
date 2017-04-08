@@ -106,11 +106,11 @@ public interface Helper<T> {
 
     void setData(T associatedObject, int position);
 
-    void setExtraObject(Object o);
+    Helper setExtraObject(Object o);
 
     Object getExtraObject();
 
-    void putExtraObject(String key, Object o);
+    Helper putExtraObject(String key, Object o);
 
     Object getExtraObject(String key);
 }
