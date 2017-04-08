@@ -109,8 +109,4 @@ public interface Helper<T> {
     void setExtraObject(Object o);
 
     Object getExtraObject();
-
-    void putExtraObject(String key, Object o);
-
-    Object getExtraObject(String key);
 }

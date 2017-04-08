@@ -617,7 +617,6 @@ public class AbHelper<T> implements Helper<T> {
     }
 
     private Object o;
-    private Map<String,Object> oMap;
 
     @Override
     public void setExtraObject(Object o) {
@@ -629,15 +628,4 @@ public class AbHelper<T> implements Helper<T> {
         return o;
     }
 
-    @Override
-    public void putExtraObject(String key, Object o) {
-        if(oMap==null)
-            oMap=new HashMap<>();
-        oMap.put(key,o);
-    }
-
-    @Override
-    public Object getExtraObject(String key) {
-        return oMap.get(key);
-    }
 }
