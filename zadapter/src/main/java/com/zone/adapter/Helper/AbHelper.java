@@ -25,6 +25,9 @@ import com.bumptech.glide.Glide;
 import com.zone.adapter.R;
 import com.zone.adapter.callback.Helper;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *
  * Allows an abstraction of the ViewHolder pattern.<br>
@@ -611,5 +614,30 @@ public class AbHelper<T> implements Helper<T> {
 
     public ViewGroup getParent() {
         return parent;
+    }
+
+    private Object o;
+    private Map<String,Object> oMap;
+
+    @Override
+    public void setExtraObject(Object o) {
+        this.o=o;
+    }
+
+    @Override
+    public Object getExtraObject() {
+        return o;
+    }
+
+    @Override
+    public void putExtraObject(String key, Object o) {
+        if(oMap==null)
+            oMap=new HashMap<>();
+        oMap.put(key,o);
+    }
+
+    @Override
+    public Object getExtraObject(String key) {
+        return oMap.get(key);
     }
 }
