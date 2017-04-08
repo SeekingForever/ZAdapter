@@ -1,22 +1,13 @@
 package com.zone.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.view.View;
 import android.view.ViewGroup;
 
 import com.zone.adapter.Helper.BaseAdapterHelperRcv;
 import com.zone.adapter.Helper.ViewHolderWithRecHelper;
-import com.zone.adapter.base.BaseQuickRcvAdapter;
 import com.zone.adapter.base.Header2FooterRcvAdapter;
-import com.zone.adapter.callback.IAdapter;
-import com.zone.adapter.loadmore.RecyclerOnLoadMoreListener;
-import com.zone.adapter.loadmore.callback.OnLoadMoreListener;
+import com.zone.adapter.callback.Helper;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -41,11 +32,11 @@ public abstract class QuickRcvAdapter<T> extends Header2FooterRcvAdapter<T> {
             //Object position to maintain the accuracy of the data before using
             holder.baseAdapterHelperRcv.setData(item, position);
             if(holder.baseAdapterHelperRcv.getExtraObject()==null)
-                helperInitExtraObject(holder.baseAdapterHelperRcv,item,getItemViewType(position));
+                bindHelperExtra(holder.baseAdapterHelperRcv,item,getItemViewType(position));
             fillData(holder.baseAdapterHelperRcv, item, itemChanged, getItemViewType(position));
     }
 
-    public  void helperInitExtraObject(BaseAdapterHelperRcv baseAdapterHelperRcv, T item, int itemViewType){
+    public  void bindHelperExtra(Helper<T> helper, T item, int itemViewType){
 
     }
 

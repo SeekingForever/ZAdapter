@@ -61,13 +61,13 @@ public abstract class QuickAdapter<T> extends BaseQuickAdapter<T> {
         //Object position to maintain the accuracy of the data before using
         helper.setData(item, position);
         if(helper.getExtraObject()==null)
-            helperInitExtraObject(helper,item,getItemViewType(position));
+            bindHelperExtra(helper,item,getItemViewType(position));
         //How to do more layout
         fillData(helper, item, itemChanged, getItemViewType(position));
         return helper.getView();
     }
 
-    public void helperInitExtraObject(BaseAdapterHelper<T> helper, T item, int itemViewType) {
+    public void bindHelperExtra(BaseAdapterHelper<T> helper, T item, int itemViewType) {
 
     }
 

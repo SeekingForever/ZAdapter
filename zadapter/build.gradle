@@ -38,7 +38,8 @@ makeJar.dependsOn(build)
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
 //    compile 'com.android.support:recyclerview-v7:22.1.1'
-//    compile 'com.android.support:recyclerview-v7:23.1.0'
+//    compile 'com.android.support:recyclerview-v7:23.2.0'//我的版本
+    //公司的版本3.1
     compile 'com.android.support:recyclerview-v7:23.1.0'
     compile 'com.github.bumptech.glide:glide:3.7.0'
 }
