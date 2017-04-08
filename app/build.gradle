@@ -9,6 +9,7 @@ android {
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -16,13 +17,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    //    compile project(':zadapter')
-        compile 'com.github.luhaoaimama1:ZAdapter:1.0.5'
+    compile project(':zadapter')
+//        compile 'com.github.luhaoaimama1:ZAdapter:1.0.5'
 //    compile files('libs/test.jar')
     compile 'com.android.support:appcompat-v7:23.1.0'
     compile 'com.android.support:design:23.1.1'

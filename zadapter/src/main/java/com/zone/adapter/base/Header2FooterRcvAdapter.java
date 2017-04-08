@@ -99,7 +99,10 @@ public abstract class Header2FooterRcvAdapter<T> extends  BaseQuickRcvAdapter<T>
             return HEADER_TYPE - position;
         } else if (position >= getHeaderViewsCount() && position < getHeaderViewsCount() + data.size()){
             QuickConfig.e("step 2:" + position);
-            return getItemLayoutId(data.get(getDataPosition(position)), getDataPosition(position));
+            int result = getItemLayoutId(data.get(getDataPosition(position)), getDataPosition(position));
+            if(result<HEADER_TYPE ||result>FOOTER_TYPE)
+                throw new IllegalStateException("layoutType is header or footer type");
+            return result;
         }else{
             QuickConfig.e("step 3:" + position);
             return FOOTER_TYPE - (position-getHeaderViewsCount()-data.size());
